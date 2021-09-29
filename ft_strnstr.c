@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 10:08:30 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 18:04:23 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/29 18:51:09 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 retorna onde começou a encontrar.
 Compara se for igual retorna 0, retorna a big no começo*/
-
