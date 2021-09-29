@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 08:29:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 16:43:43 by jefernan         ###   ########.fr       */
+/*   Created: 2021/09/26 17:18:31 by jefernan          #+#    #+#             */
+/*   Updated: 2021/09/26 18:16:51 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_atoi(const char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	num;
-	int	neg;
+	char	*str;
 
-	i = 0;
-	num = 0;
-	neg = 1;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-	{
-		neg *= -1;
-		i++;
-	}
-	if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * neg);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return(NULL);
 }

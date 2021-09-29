@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 08:29:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 16:43:43 by jefernan         ###   ########.fr       */
+/*   Created: 2021/09/26 17:17:57 by jefernan          #+#    #+#             */
+/*   Updated: 2021/09/27 11:48:42 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <fcntl.h>
 
-int	ft_atoi(const char *str)
+void ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	int	num;
-	int	neg;
+	write(fd, &n, 1);
+}
 
-	i = 0;
-	num = 0;
-	neg = 1;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-	{
-		neg *= -1;
-		i++;
-	}
-	if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * neg);
+int main(void)
+{
+	ft_putnbr_fd('1', 1);
+	int fd = open("teste_nbr", O_WRONLY | O_CREAT, 0777);
+	ft_putnbr_fd('2', fd);
+
+	close(fd);
+	return (0);
 }

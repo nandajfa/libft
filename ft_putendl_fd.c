@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 08:29:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 16:43:43 by jefernan         ###   ########.fr       */
+/*   Created: 2021/09/26 17:17:49 by jefernan          #+#    #+#             */
+/*   Updated: 2021/09/27 11:44:43 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <fcntl.h>
 
-int	ft_atoi(const char *str)
+void ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-	int	num;
-	int	neg;
+	int i;
 
 	i = 0;
-	num = 0;
-	neg = 1;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
+	while (s[i] != '\0')
 	{
-		neg *= -1;
+		write (fd, &s[i], 1);
 		i++;
 	}
-	if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * neg);
+	write (fd, "\n", 1);
+}
+
+int main(void)
+{
+	ft_putendl_fd("bye", 1);
+	int fd = open("teste_putend", O_WRONLY | O_CREAT, 0777);
+	ft_putendl_fd("bye", fd);
+
+	close(fd);
+	return (0);
 }

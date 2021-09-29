@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:24:05 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/24 11:13:10 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/28 11:13:38 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
+	if (!src)
+		return (0);
 	i = 0;
 	if (dstsize == 0)
 	{

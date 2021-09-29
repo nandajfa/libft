@@ -6,8 +6,13 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:13:19 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/24 11:09:02 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/27 19:45:52 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(str, 0, n);
+}
