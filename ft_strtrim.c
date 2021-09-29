@@ -6,12 +6,12 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:31 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/26 18:16:51 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/29 18:13:36 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
@@ -20,3 +20,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!str)
 		return(NULL);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:13:19 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/27 19:45:52 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/29 17:39:34 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(str, 0, n);
+	ft_memset(s, 0, n);
 }

@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:38:03 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/25 18:45:28 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/29 17:59:14 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	s2;
-	size_t	i;
+	char	*s2;
+	int		i;
 
 	i = 0;
 	s2 = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);

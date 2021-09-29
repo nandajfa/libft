@@ -6,9 +6,15 @@
 #    By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 10:43:14 by jefernan          #+#    #+#              #
-#    Updated: 2021/09/25 18:57:21 by jefernan         ###   ########.fr        #
+#    Updated: 2021/09/29 18:32:42 by jefernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME	=	libft.a
+CC		=	clang
+CFLAGS	=	-Wall -Wextra -Werror
+AR		=	ar
+ARFLAGS	=	rcs
 
 SRCS	= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
@@ -19,21 +25,15 @@ SRCS	= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_striteri.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c
 
 OBJS	= ${SRCS:.c=.o}
-
-NAME	=	libft.a
-CC		=	clang
-CFLAGS	=	-Wall -Wextra -Werror
-AR		=	ar
-ARFLAGS	=	rcs
 RM		=	rm -f
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:		${NAME}
-
 ${NAME}:	${OBJS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJS}
+
+all:		${NAME}
 
 clean:
 			${RM} ${OBJS}
