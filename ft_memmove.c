@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 10:08:59 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 18:57:36 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/29 19:23:33 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (len > 0)
+		while (len-- > 0)
 		{
 			ds[i] = sr[i];
 			i--;
