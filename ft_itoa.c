@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 23:11:27 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/30 09:12:19 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/30 09:25:37 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ static int	ft_count(int n)
 	i = 0;
 	if (n == 0)
 		i = 1;
-	if (n < 0)
-	{
-		i++;
-		n = -1 * n;
-	}
 	while (n != 0)
 	{
 		n /= 10;
@@ -34,29 +29,27 @@ static int	ft_count(int n)
 
 char	*ft_itoa(int n)
 {
-	long	i;
+	int		i;
 	int		count;
 	char	*str;
 
 	count = ft_count(n);
-	i = (long)n;
-	str = (char *)malloc((count + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	str[count] = '\0';
-	if (i == 0)
-		str[0] = '0';
+	i = count;
 	if (n < 0)
 	{
 		str[0] = '-';
-		i *= -i;
+		i += 1;
+		n *= -1;
 	}
-	count--;
+	str = (char *)ft_calloc((count + 1), sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
 	while (n != 0)
 	{
-		str[count] = i % 10 + '0';
-		i /= 10;
-		count--;
+		str[--i] = n % 10 + '0';
+		n /= 10;
 	}
 	return (str);
 }
