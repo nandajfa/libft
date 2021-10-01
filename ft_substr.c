@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:35 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 18:50:08 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/09/30 17:49:31 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = (char *)malloc((len + 1) * sizeof(*s));
 	if (!str)
 		return (NULL);
