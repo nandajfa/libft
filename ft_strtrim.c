@@ -6,18 +6,22 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:31 by jefernan          #+#    #+#             */
-/*   Updated: 2021/09/29 18:13:36 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:55:45 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	size_t	len;
 
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str)
-		return(NULL);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len]))
+		len--;
+	return (ft_Substr(s1, 0, len + 1));
 }
-*/

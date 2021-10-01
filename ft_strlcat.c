@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 10:08:59 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 11:20:35 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/01 11:26:22 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[len] = src[len - i];
 		len++;
 	}
-	dst[len] = '\0';
+	if (i < dstsize)
+		dst[len] = '\0';
 	return (i + src_len);
 }
