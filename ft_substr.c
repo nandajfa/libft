@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:35 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 19:09:49 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/01 20:22:28 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = 0;
 	if (!s)
 		return (NULL);
-	str = (char *)malloc((len + 1) * sizeof(char));
+	if (len > ft_strlen(s + start))
+		str = (char *)malloc((ft_strlen(s + start) * (sizeof(char))));
+	else
+		str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s[i])
