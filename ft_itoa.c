@@ -6,15 +6,15 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 23:11:27 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 11:00:57 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/01 11:06:11 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(unsigned int n)
+static int	ft_count(int n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	if (n == 0)
@@ -29,31 +29,29 @@ static int	ft_count(unsigned int n)
 
 char	*ft_itoa(int n)
 {
-	unsigned int	i;
-	unsigned int	nbr;
-	int				count;
-	char			*str;
+	int		i;
+	int		count;
+	char	*str;
 
 	count = ft_count(n);
-	nbr = (unsigned int)n;
 	i = count;
 	if (n < 0)
 	{
 		str = (char *)ft_calloc((count + 2), sizeof(char));
 		str[0] = '-';
-		nbr *= -1;
+		n *= -1;
 		i++;
 	}
 	else
 	str = (char *)ft_calloc((count + 1), sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (nbr == 0)
+	if (n == 0)
 		str[0] = '0';
-	while (nbr != 0)
+	while (n != 0)
 	{
-		str[--i] = nbr % 10 + '0';
-		nbr /= 10;
+		str[--i] = n % 10 + '0';
+		n /= 10;
 	}
 	return (str);
 }
