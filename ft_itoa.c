@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 23:11:27 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 20:11:09 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:05:33 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,19 @@ char	*ft_itoa(int n)
 		str = (char *)ft_calloc((count + 2), sizeof(char));
 		str[0] = '-';
 		n *= -1;
+		i++;
 	}
 	else
 		str = (char *)ft_calloc((count + 1), sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	while (n != 0 || i != 0)
-	{
+	if (n == 0)
 		str[0] = '0';
+	while (n != 0)
+	{
 		str[--i] = n % 10 + '0';
 		n /= 10;
 	}
 	return (str);
 }
+
