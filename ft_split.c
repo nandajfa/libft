@@ -6,12 +6,11 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/02 19:46:39 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/02 20:20:34 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_countwords(const char *s, char c)
 {
@@ -98,20 +97,4 @@ char	**ft_split(char const *s, char c)
 	}
 	tab[count] = NULL;
 	return (tab);
-}
-
-int	main(void)
-{
-	printf("\nTeste de ft_split :\n");
-
-	int		i;
-	char	**res;
-	printf("Chaine s : 'Let's break string into píeces', separator c : ' ', resultat :\n");
-	res = ft_split("Let's break string into píeces", ' ');
-	i = 0;
-	while (res[i])
-	{
-		printf("'%s'\n", res[i]);
-		i++;
-	}
 }
