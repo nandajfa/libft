@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/02 20:20:34 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/03 08:42:50 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ft_wordlen(const char *s, char c)
 	return (i++);
 }
 
-static char	*worddup(const char *s, int len)
+static char	*ft_dup(const char *s, int len)
 {
 	char	*str;
 	int		i;
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		len = ft_wordlen(s, c);
 		if (len)
 		{
-			tab[count] = worddup(s, len);
+			tab[count] = ft_dup(s, len);
 			if (tab[count++] == NULL)
 				return (ft_free(tab, count - 1));
 		}
