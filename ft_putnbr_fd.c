@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:17:57 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/04 09:14:06 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:18:06 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n *= -1;
+		ft_putnbr_fd(-n, fd);
 	}
 	else if (n >= 10)
 	{
