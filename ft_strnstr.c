@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 10:08:30 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 17:14:25 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:03:44 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/*exemplo
- char *big = "O rato roeu a roupa do rei de Roma";
- char *little = "roupa";
- quantidade de bytes de busca
- int main(void)
-{
-	ft_strmapi(big, little, 19); - retorna = "roupa do rei de Roma"
-}
-retorna onde começou a encontrar.
-Compara se for igual retorna 0, retorna a big no começo*/
