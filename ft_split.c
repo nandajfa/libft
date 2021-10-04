@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:18:07 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/03 08:42:50 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:05:12 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*ft_dup(const char *s, int len)
 	char	*str;
 	int		i;
 
-	str = malloc(len + 1);
+	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -61,11 +61,11 @@ static char	*ft_dup(const char *s, int len)
 
 static void	*ft_free(char **tab, int stop)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (count < stop)
-		free(tab[count]);
+	i = 0;
+	while (i < stop)
+		free(tab[i]);
 	free(tab);
 	return (NULL);
 }
@@ -75,26 +75,26 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	int		len;
 	int		word;
-	int		count;
+	int		i;
 
 	if (s == NULL)
 		return (NULL);
 	word = ft_countwords(s, c);
-	tab = malloc((word + 1) * sizeof(char *));
+	tab = (char **)malloc((word + 1) * sizeof(char *));
 	if (tab == NULL)
 		return (NULL);
-	count = 0;
-	while (count < word)
+	i = 0;
+	while (i < word)
 	{
 		len = ft_wordlen(s, c);
 		if (len)
 		{
-			tab[count] = ft_dup(s, len);
-			if (tab[count++] == NULL)
-				return (ft_free(tab, count - 1));
+			tab[i] = ft_dup(s, len);
+			if (tab[i++] == NULL)
+				return (ft_free(tab, i - 1));
 		}
 		s += len + 1;
 	}
-	tab[count] = NULL;
+	tab[i] = NULL;
 	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:17:57 by jefernan          #+#    #+#             */
-/*   Updated: 2021/10/01 16:55:14 by jefernan         ###   ########.fr       */
+/*   Updated: 2021/10/04 09:14:06 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == INT_MIN)
+	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		n *= -1;
 	}
 	else if (n >= 10)
 	{
