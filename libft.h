@@ -6,7 +6,7 @@
 /*   By: jefernan <jefernan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 11:25:33 by jefernan          #+#    #+#             */
-/*   Updated: 2022/07/20 23:37:20 by jefernan         ###   ########.fr       */
+/*   Updated: 2022/07/20 18:42:06 by jefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
 
 /**
  * @brief converts the initial portion of the string pointed
