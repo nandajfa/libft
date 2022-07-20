@@ -21,6 +21,7 @@
 - [x] [`ft_isalpha`](https://github.com/nandajfa/libft_42/blob/master/ft_isalpha.c)			- alphabetic character test.
 - [x] [`ft_isdigit`](https://github.com/nandajfa/libft_42/blob/master/ft_isdigit.c)			- decimal-digit character test.
 - [x] [`ft_isprint`](https://github.com/nandajfa/libft_42/blob/master/ft_isprint.c)			- printing character test (space character inclusive).
+- [x] [`ft_isspace`](https://github.com/nandajfa/libft/blob/master/ft_isspace.c)			- checks for white-space characters. In the "C" and "POSIX" locales, these are: space, form-feed ('\f'), newline ('\n'), carriage return ('\r'), horizontal tab ('\t'), and vertical tab ('\v').
 - [x] [`ft_tolower`](https://github.com/nandajfa/libft_42/blob/master/ft_tolower.c)			- upper case to lower case letter conversion.
 - [x] [`ft_toupper`](https://github.com/nandajfa/libft_42/blob/master/ft_toupper.c)			- lower case to upper case letter conversion.
 
